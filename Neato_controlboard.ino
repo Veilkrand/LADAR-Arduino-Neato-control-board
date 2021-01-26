@@ -1,5 +1,5 @@
 /*
-Arduino Neato XV-11 with Touch Screen and space represntation 
+Arduino Neato XV-11 with Touch Screen and space representation 
 
 Alberto Naranjo
 
@@ -77,7 +77,7 @@ unsigned char PWM4duty=PWM4dutyMin;  // have to set a default value make motor s
     
 
   // prints title with ending line break 
-  Serial.println("Arduino Neato XV-11 Motor control board v0.1 by Cheng-Lung Lee"); 
+  Serial.println("Arduino Neato XV-11 Motor control board v1.0 by Alberto Naranjo"); 
   
   // Pick your magic number and drive your motor , 178 is 178/255*5V=3.49V
     analogWrite(MotorPWMPin, PWM4duty);
@@ -322,8 +322,8 @@ void readData(unsigned char inByte){
 // Very simple speed control
 void SpeedControl ( int RPMinput)
 {
-// if (Data_4deg_index%30==0) {  // I only do 3 updat I feel it is good enough for now
- if (Data_4deg_index%40==0) {  // I only do 3 updat I feel it is good enough for now
+// if (Data_4deg_index%30==0) {  // I only do 3 updates I feel it is good enough for now
+ if (Data_4deg_index%40==0) {  // I only do 3 updates I feel it is good enough for now
   if (SpeedRPH<RPMinput*60)
      if (PWM4duty<PWM4dutyMax) PWM4duty++; // limit the max PWM make sure it don't overflow and make LDS stop working
   if (SpeedRPH>RPMinput*60)
